@@ -12,8 +12,7 @@ form_df = pd.DataFrame({
     'Qty':pd.Series(dtype='int'),
     'Session':pd.Series(dtype='int'),
     'Detail':pd.Series(dtype='str'),
-    'Price':pd.Series(dtype='float'),
-    'Subtotal':pd.Series(dtype='float')
+    'Price':pd.Series(dtype='float')
 })
 
 items_price = ["Video Camera", "Still Camera", "Drone", "Candid Video", "Candid Stills"]
