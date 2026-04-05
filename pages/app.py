@@ -15,7 +15,7 @@ form_df = pd.DataFrame({
     'Price':pd.Series(dtype='float')
 })
 
-items_price = ["Video Camera", "Still Camera", "Drone", "Candid Video", "Candid Stills"]
+items_price = ["Video Camera - FX30", "Video Camera", "Still Camera", "Drone", "Candid Video", "Candid Stills"]
 
 form_config = {
     'Description':st.column_config.SelectboxColumn("Description", options=items_price),
@@ -34,8 +34,9 @@ if st.button("Preview & Submit", key="Form submit"):
     if not edited_df.empty:
         st.session_state.form_data = edited_df
         st.session_state.quote_date = quote_date
-        st.switch_page("pages/print.py")
+        st.switch_page("print.py")
     else:
         st.error("Please add at least one item before submitting.")
 
-
+if st.button("Logout"):
+    st.logout()
