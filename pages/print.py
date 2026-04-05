@@ -6,10 +6,11 @@ from jinja2 import Template
 from streamlit import session_state
 import streamlit.components.v1
 
-
-current_path = current_dir = os.path.dirname(__file__)
+current_path = os.path.dirname(__file__)
+parent_directory = os.path.dirname(os.path.dirname(__file__))
 css_path = os.path.join(current_path, "quotation.css")
 html_path = os.path.join(current_path, "quotation.html")
+app_path = os.path.join(parent_directory, "app.py")
 
 if 'form_data' in session_state:
     df = st.session_state.form_data
@@ -51,9 +52,9 @@ if 'form_data' in session_state:
     st.components.v1.html(printable_html, height=1200, scrolling=True)
 
     if st.button("Edit Quotation"):
-        st.switch_page("../app.py")
+        st.switch_page(app_path)
 
 else:
     st.warning("No quotation data found. Please fill the form on the main page.")
     if st.button("Go to Form"):
-        st.switch_page("../app.py")
+        st.switch_page(app_path)
