@@ -32,8 +32,14 @@ edited_df = st.data_editor(form_df,
                num_rows="dynamic")
 
 if st.button("Preview & Submit", key="Form submit"):
-    if not edited_df.empty:
-        st.session_state.form_data = edited_df
+    # Create a mask for rows where the specified columns have NO missing values
+    not_null_mask = edited_df[['Description', 'Numbers', 'Session', 'Amount']].notna().all(axis=1)
+
+    # Apply the combined condition
+    filtered_df = edited_df[not_null_mask | (edited_df['Amount'] > 0)]
+
+    if not filtered_df.empty:
+        st.session_state.form_data = filtered_df
         st.session_state.quote_date = quote_date
         st.switch_page("pages/print.py", sidebar=False)
     else:
