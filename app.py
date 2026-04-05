@@ -10,20 +10,20 @@ quote_date = st.date_input(label="Date", value=datetime.datetime.today())
 
 form_df = pd.DataFrame({
     'Description':pd.Series(dtype='str'),
-    'Qty':pd.Series(dtype='int'),
+    'Numbers':pd.Series(dtype='int'),
     'Session':pd.Series(dtype='int'),
     'Detail':pd.Series(dtype='str'),
-    'Price':pd.Series(dtype='float')
+    'Amount':pd.Series(dtype='float')
 })
 
 items_price = ["Video Camera - FX30", "Video Camera", "Still Camera", "Drone", "Candid Video", "Candid Stills"]
 
 form_config = {
     'Description':st.column_config.SelectboxColumn("Description", options=items_price),
-    'No.':st.column_config.NumberColumn("Qty",step=1),
+    'Numbers':st.column_config.NumberColumn("Numbers",step=1),
     'Session':st.column_config.NumberColumn("Session",step=1),
     'Detail':st.column_config.TextColumn("Detail", default='None'),
-    'Amount':st.column_config.NumberColumn("Price",step=1.0)
+    'Amount':st.column_config.NumberColumn("Amount",step=1.0)
 }
 
 edited_df = st.data_editor(form_df,
