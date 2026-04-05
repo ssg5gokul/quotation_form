@@ -47,9 +47,9 @@
                 <tr>
                     <td>{{ row.Description }}</td>
                     <td>{{ row.Numbers }}</td>
-                    <td>{{ row.Session }}</td>
+                    <td>{{ row.Session if row.Session != None and row.Session != 0 else "" }}</td>
                     <td>{{ row.Detail }}</td>
-                    <td>{{ row.Amount }}</td>
+                    <td>{{ row.Amount if row.Amount != 0 else "" }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
