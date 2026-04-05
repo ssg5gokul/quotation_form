@@ -33,15 +33,12 @@ edited_df = st.data_editor(form_df,
 
 if st.button("Preview & Submit", key="Form submit"):
     # Create a mask for rows where the specified columns have NO missing values
-    not_null_mask = edited_df[['Description', 'Numbers', 'Session', 'Amount']].notna().all(axis=1)
-
-    # Apply the combined condition
-    filtered_df = edited_df[not_null_mask | (edited_df['Amount'] > 0)]
+    filtered_df = edited_df[['Description', 'Numbers', 'Session', 'Amount']].notna().all(axis=1)
 
     if not filtered_df.empty:
         st.session_state.form_data = filtered_df
         st.session_state.quote_date = quote_date
-        st.switch_page("pages/print.py", sidebar=False)
+        st.switch_page("pages/print.py")
     else:
         st.error("Please add at least one item before submitting.")
 
