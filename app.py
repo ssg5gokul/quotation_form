@@ -16,7 +16,7 @@ form_df = pd.DataFrame({
     'Amount':pd.Series(dtype='float')
 })
 
-items_price = ["Video Camera - FX30", "Video Camera", "Still Camera", "Drone", "Candid Video", "Candid Stills"]
+items_price = ["Video Camera", "Still Camera", "Drone", "Candid Video", "Candid Stills", "TV", "360 degree camera", "Photo booth", "Wall LED", "Live streaming", "Photo Mug", "Lamination", "Calendar"]
 
 form_config = {
     'Description':st.column_config.SelectboxColumn("Description", options=items_price),
