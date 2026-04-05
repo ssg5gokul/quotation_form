@@ -28,7 +28,7 @@ else:
 
 
     # 3. Main App Content (Only reached if user is in ALLOWED_USERS)
-    st.switch_page("pages/app.py")
+    st.switch_page("app.py")
 
 
 

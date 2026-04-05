@@ -51,9 +51,9 @@ if 'form_data' in session_state:
     st.components.v1.html(printable_html, height=1200, scrolling=True)
 
     if st.button("Edit Quotation"):
-        st.switch_page("app.py")
+        st.switch_page("../app.py")
 
 else:
     st.warning("No quotation data found. Please fill the form on the main page.")
     if st.button("Go to Form"):
-        st.switch_page("app.py")
+        st.switch_page("../app.py")

@@ -34,7 +34,7 @@ if st.button("Preview & Submit", key="Form submit"):
     if not edited_df.empty:
         st.session_state.form_data = edited_df
         st.session_state.quote_date = quote_date
-        st.switch_page("print.py")
+        st.switch_page("pages/print.py")
     else:
         st.error("Please add at least one item before submitting.")
 
