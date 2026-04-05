@@ -2,6 +2,7 @@ import datetime
 
 import streamlit as st
 import pandas as pd
+from streamlit import sidebar
 
 st.title("Quotation Form")
 
@@ -19,10 +20,10 @@ items_price = ["Video Camera - FX30", "Video Camera", "Still Camera", "Drone", "
 
 form_config = {
     'Description':st.column_config.SelectboxColumn("Description", options=items_price),
-    'Qty':st.column_config.NumberColumn("Qty",step=1),
+    'No.':st.column_config.NumberColumn("Qty",step=1),
     'Session':st.column_config.NumberColumn("Session",step=1),
     'Detail':st.column_config.TextColumn("Detail", default='None'),
-    'Price':st.column_config.NumberColumn("Price",step=1.0)
+    'Amount':st.column_config.NumberColumn("Price",step=1.0)
 }
 
 edited_df = st.data_editor(form_df,
@@ -34,7 +35,7 @@ if st.button("Preview & Submit", key="Form submit"):
     if not edited_df.empty:
         st.session_state.form_data = edited_df
         st.session_state.quote_date = quote_date
-        st.switch_page("pages/print.py")
+        st.switch_page("pages/print.py", sidebar=False)
     else:
         st.error("Please add at least one item before submitting.")
 
