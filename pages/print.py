@@ -18,7 +18,7 @@ if 'form_data' in session_state:
     # 2. Prepare data for Jinja2
     # Convert DataFrame rows to a list of dictionaries for the template
     items = df.to_dict(orient='records')
-    grand_total = df['Price'].sum()
+    grand_total = df['Amount'].sum()
 
     # Read CSS file
     with open(css_path, "r") as f:

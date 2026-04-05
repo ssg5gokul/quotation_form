@@ -36,7 +36,7 @@ if st.button("Preview & Submit", key="Form submit"):
     filtered_df = edited_df[['Description', 'Numbers', 'Session', 'Amount']].notna().all(axis=1)
 
     if not filtered_df.empty:
-        st.session_state.form_data = filtered_df
+        st.session_state.form_data = edited_df
         st.session_state.quote_date = quote_date
         st.switch_page("pages/print.py")
     else:
