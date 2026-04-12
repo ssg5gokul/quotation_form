@@ -23,7 +23,7 @@ form_config = {
     'Numbers':st.column_config.NumberColumn("Numbers",step=1),
     'Session':st.column_config.NumberColumn("Session",step=1),
     'Detail':st.column_config.TextColumn("Detail", default=""),
-    'Amount':st.column_config.NumberColumn("Amount",step=1.0, default=0)
+    'Amount':st.column_config.NumberColumn("Amount",step=1.00, default=0)
 }
 
 edited_df = st.data_editor(form_df,
