@@ -17,7 +17,7 @@ if 'form_data' not in st.session_state:
         'Amount':pd.Series(dtype='float')
     })
 
-items_price = ["Video Camera", "Still Camera", "Drone", "Candid Video", "Candid Stills", "TV", "360 degree camera", "Photo booth", "Wall LED", "Live streaming", "Photo Mug", "Lamination", "Calendar"]
+items_price = ["Video Camera", "Still Camera", "Drone", "Candid Video", "Candid Stills", "TV", "360 degree camera", "Photo booth", "Wall LED", "Live streaming", "Photo Mug", "Lamination", "Calendar","Pre-wedding photoshoot", "Post-wedding photoshoot"]
 
 form_config = {
     'Description':st.column_config.SelectboxColumn("Description", options=items_price),
