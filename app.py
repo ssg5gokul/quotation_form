@@ -8,13 +8,14 @@ st.title("Quotation Form")
 
 quote_date = st.date_input(label="Date", value=datetime.datetime.today())
 
-form_df = pd.DataFrame({
-    'Description':pd.Series(dtype='str'),
-    'Numbers':pd.Series(dtype='int'),
-    'Session':pd.Series(dtype='int'),
-    'Detail':pd.Series(dtype='str'),
-    'Amount':pd.Series(dtype='float')
-})
+if 'form_data' not in st.session_state:
+    form_df = pd.DataFrame({
+        'Description':pd.Series(dtype='str'),
+        'Numbers':pd.Series(dtype='int'),
+        'Session':pd.Series(dtype='int'),
+        'Detail':pd.Series(dtype='str'),
+        'Amount':pd.Series(dtype='float')
+    })
 
 items_price = ["Video Camera", "Still Camera", "Drone", "Candid Video", "Candid Stills", "TV", "360 degree camera", "Photo booth", "Wall LED", "Live streaming", "Photo Mug", "Lamination", "Calendar"]
 
