@@ -9,7 +9,7 @@ st.title("Quotation Form")
 quote_date = st.date_input(label="Date", value=datetime.datetime.today())
 
 if 'form_data' not in st.session_state:
-    form_df = pd.DataFrame({
+    st.session_state.form_data = pd.DataFrame({
         'Description':pd.Series(dtype='str'),
         'Numbers':pd.Series(dtype='int'),
         'Session':pd.Series(dtype='int'),
