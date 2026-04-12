@@ -49,14 +49,14 @@
                     <td>{{ row.Numbers }}</td>
                     <td>{{ row.Session if row.Session != None and row.Session != 0 else "" }}</td>
                     <td>{{ row.Detail }}</td>
-                    <td>{{ row.Amount if row.Amount != 0 else "" }}</td>
+                    <td>{{ "%.2f"|format(row.Amount) if row.Amount != 0 else "" }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
         <div class="summary-wrapper">
             <table class="summary-table">
-                <tr class="total-row"><td>Grand Total:</td><td class="text-right">Rs. {{grand_total}}</td></tr>
+                <tr class="total-row"><td>Grand Total:</td><td class="text-right">Rs. {{"%.2f"|format(grand_total)}}</td></tr>
             </table>
         </div>
 <!--        <div class="footer-section">-->
