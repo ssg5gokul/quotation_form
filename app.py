@@ -27,7 +27,7 @@ form_config = {
     'Amount':st.column_config.NumberColumn("Amount",step=1.00, default=0)
 }
 
-edited_df = st.data_editor(form_df,
+edited_df = st.data_editor(st.session_state.form_data,
                column_config=form_config,
                width='stretch',
                num_rows="dynamic")
